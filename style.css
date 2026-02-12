@@ -1,0 +1,30 @@
+body {
+  font: 1.2em / 1.5 system-ui;
+  margin: 0 auto;
+  width: 90%;
+  min-width: 800px;
+  max-width: 1200px;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: red;
+}
+
+video {
+  width: 100%;
+  border: 1px solid black;
+}
