@@ -1,0 +1,40 @@
+<!--
+Name: Pratham Prajapati
+File: index.html
+Date: 09 April 2026
+Description: Silly story generator using JavaScript following MDN tutorial
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Silly Story Generator</title>
+</head>
+<body>
+
+<div>
+  <label for="custom-name">Enter custom name:</label>
+  <input id="custom-name" type="text">
+</div>
+
+<fieldset>
+  <legend>Choose locale:</legend>
+
+  <label for="us">US</label>
+  <input id="us" type="radio" name="uk-us" value="us" checked>
+
+  <label for="uk">UK</label>
+  <input id="uk" type="radio" name="uk-us" value="uk">
+</fieldset>
+
+<div>
+  <button class="generate">Generate random story</button>
+</div>
+
+<p class="story"></p>
+
+<script src="main.js"></script>
+
+</body>
+</html>
