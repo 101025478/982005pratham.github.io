@@ -16,6 +16,10 @@ const height = canvas.height = window.innerHeight;
 let balls = [];
 let ballCount = 0;
 
+function randomRGB() {
+  return `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`;
+}
+
 // Ball constructor
 function Ball(x, y, velX, velY, size, color) {
   this.x = x;
@@ -47,6 +51,20 @@ Ball.prototype.update = function () {
   this.y += this.velY;
 };
 
+Ball.prototype.collisionDetect = function () {
+  for (const ball of balls) {
+    if (this !== ball) {
+      const dx = this.x - ball.x;
+      const dy = this.y - ball.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < this.size + ball.size) {
+        ball.color = this.color = randomRGB();
+      }
+    }
+  }
+};
+
 // create balls
 while (balls.length < 10) {
   const size = 10 + Math.random() * 20;
@@ -57,7 +75,7 @@ while (balls.length < 10) {
     (Math.random() - 0.5) * 10,
     (Math.random() - 0.5) * 10,
     size,
-    `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`
+    randomRGB()
   );
 
   balls.push(ball);
@@ -72,6 +90,7 @@ function loop() {
   for (const ball of balls) {
     ball.draw();
     ball.update();
+    ball.collisionDetect();
   }
 
   para.textContent = "Ball count: " + ballCount;
