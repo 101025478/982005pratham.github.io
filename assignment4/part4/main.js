@@ -1,6 +1,7 @@
 // Name: Pratham Prajapati
 // File: main.js
 // Date: 09 April 2026
+// canvas setup for animation
 // Description: Bouncing balls using JavaScript (MDN)
 
 const canvas = document.querySelector("canvas");
