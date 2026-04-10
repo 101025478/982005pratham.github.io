@@ -32,6 +32,7 @@ Ball.prototype.draw = function () {
   ctx.fill();
 };
 
+// animation loop for bouncing balls
 Ball.prototype.update = function () {
   if ((this.x + this.size) >= width || (this.x - this.size) <= 0) {
     this.velX = -this.velX;
